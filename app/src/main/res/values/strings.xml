@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MapboxPractice</string>
+    <string name="mapbox_token" translatable="false">pk.eyJ1IjoibWF0dGhldy1xaXUtY2FybG91ZHkiLCJhIjoiY2p1dWF1NHlzMGd1ODN5cGY1OXVrdmFyMyJ9.rfGYzdGt76XzQVxpLvAEqg</string>
+</resources>
