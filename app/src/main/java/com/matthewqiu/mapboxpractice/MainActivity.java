@@ -157,6 +157,8 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
 
             // For voice instructions
             initializeSpeechPlayer();
+
+//            goToTestLocation();
         });
     }
 
@@ -168,17 +170,20 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
             return false;
         }
 
-        // Fetch the route with this given point
-        destination = Point.fromLngLat(point.getLongitude(), point.getLatitude());
-        calculateRouteWith(destination, false);
+//        // Fetch the route with this given point
+//        destination = Point.fromLngLat(point.getLongitude(), point.getLatitude());
+//        calculateRouteWith(destination, false);
+//
+//        // Clear any existing markers and add new one
+//        navigationMap.clearMarkers();
+//        navigationMap.addMarker(this, destination);
+//
+//        // Update camera to new destination
+//        moveCameraToInclude(destination);
+////        vibrate();
 
-        // Clear any existing markers and add new one
-        navigationMap.clearMarkers();
-        navigationMap.addMarker(this, destination);
+        goToTestLocation();
 
-        // Update camera to new destination
-        moveCameraToInclude(destination);
-//        vibrate();
         return false;
     }
 
@@ -562,5 +567,17 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
         public void onFailure(@NonNull Exception exception) {
             Timber.e(exception);
         }
+    }
+
+    private void goToTestLocation(){
+        destination = Point.fromLngLat(-87.95964962010729, 42.03902482989272);
+        calculateRouteWith(destination, false);
+
+        // Clear any existing markers and add new one
+        navigationMap.clearMarkers();
+        navigationMap.addMarker(this, destination);
+
+        // Update camera to new destination
+        moveCameraToInclude(destination);
     }
 }
