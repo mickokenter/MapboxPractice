@@ -17,6 +17,7 @@ import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.mapbox.android.core.location.LocationEngine;
@@ -110,6 +111,9 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
     @BindView(R.id.cancelNavigationFab)
     FloatingActionButton cancelNavigationFab;
 
+    @BindView(R.id.btn_misoya)
+    Button mBtnMisoya;
+
     private final MainActivityLocationCallback callback = new MainActivityLocationCallback(this);
     private LocationEngine locationEngine;
     private MapboxNavigation navigation;
@@ -170,19 +174,19 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
             return false;
         }
 
-//        // Fetch the route with this given point
-//        destination = Point.fromLngLat(point.getLongitude(), point.getLatitude());
-//        calculateRouteWith(destination, false);
-//
-//        // Clear any existing markers and add new one
-//        navigationMap.clearMarkers();
-//        navigationMap.addMarker(this, destination);
-//
-//        // Update camera to new destination
-//        moveCameraToInclude(destination);
-////        vibrate();
+        // Fetch the route with this given point
+        destination = Point.fromLngLat(point.getLongitude(), point.getLatitude());
+        calculateRouteWith(destination, false);
 
-        goToTestLocation();
+        // Clear any existing markers and add new one
+        navigationMap.clearMarkers();
+        navigationMap.addMarker(this, destination);
+
+        // Update camera to new destination
+        moveCameraToInclude(destination);
+//        vibrate();
+
+//        goToTestLocation();
 
         return false;
     }
@@ -233,6 +237,11 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
 
         // Add back regular location listener
         addLocationEngineListener();
+    }
+
+    @OnClick(R.id.btn_misoya)
+    public void onBtnMisoyaClick(Button mBtnMisoya) {
+        goToTestLocation(42.03902482989272, -87.95964962010729);
     }
 
     /*
@@ -569,8 +578,8 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
         }
     }
 
-    private void goToTestLocation(){
-        destination = Point.fromLngLat(-87.95964962010729, 42.03902482989272);
+    private void goToTestLocation(double lat, double lng){
+        destination = Point.fromLngLat(lng, lat);
         calculateRouteWith(destination, false);
 
         // Clear any existing markers and add new one
