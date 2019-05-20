@@ -29,8 +29,8 @@ public class MirroredMapView extends MapView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         canvas.translate(getWidth(), 0);
         canvas.scale(-1, 1);
-        super.onDraw(canvas);
     }
 }

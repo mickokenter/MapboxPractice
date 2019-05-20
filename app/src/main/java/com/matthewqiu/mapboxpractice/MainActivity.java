@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.location.Location;
+import android.net.wifi.WifiInfo;
 import android.os.Build;
+import android.os.Message;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
@@ -61,6 +63,7 @@ import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 import com.mapbox.services.android.navigation.v5.offroute.OffRouteListener;
 import com.mapbox.services.android.navigation.v5.routeprogress.ProgressChangeListener;
 import com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress;
+import com.matthewqiu.mapboxpractice.wifi.WiFiConnecter;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -134,6 +137,7 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.CustomInstructionView);
+//        connectToWifi();
 
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.mapbox_token));
@@ -143,6 +147,41 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
     }
+
+
+//    private void connectToWifi(){
+//
+//        WiFiConnecter mWiFiConnecter_ios = new WiFiConnecter(this);
+//        mWiFiConnecter_ios.setWiFiConnecterListener(new WiFiConnecter.ActionListener() {
+//            @Override
+//            public void onStarted(String ssid) {
+//            }
+//
+//            @Override
+//            public void onSuccess(WifiInfo info) {
+////                Log.d(TAG,"------onSuccess------");
+////                showOnlineIcon();
+////                showWiFiConnectionStatus("WiFi connected Successfully");
+//            }
+//
+//            @Override
+//            public void onFailure() {
+////                showWiFiConnectionStatus("WiFi FAILED, Please Try a Different WiFi");
+////                hideOnlineIcon();
+//                Message err = new Message();
+////                err.what = UPDATE_FAIL;
+////                handler.sendMessage(err); // This is for iOS
+////                Log.d(TAG,"------onFailure------");
+////                                        sendErrorMessage("Error Connecting Carloudy to Wifi, Please Try Again or Choose a Different Wifi");
+//            }
+//
+//            @Override
+//            public void onFinished(boolean isSuccessed) {
+////                Log.d(TAG,"------onFinished------");
+//            }
+//        });
+//        mWiFiConnecter_ios.connect("CognitiveAI", "C@rloudyT3ch");
+//    }
 
 
     @Override

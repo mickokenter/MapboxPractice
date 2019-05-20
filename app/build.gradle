@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.matthewqiu.mapboxpractice"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,16 +17,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility '1.8'
+        targetCompatibility '1.8'
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha4'
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0'
@@ -35,6 +34,7 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-core:1.3.0'
     implementation 'com.jakewharton:butterknife:8.8.1'
 
+    implementation 'com.android.support:support-v4:28.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     testImplementation 'junit:junit:4.12'

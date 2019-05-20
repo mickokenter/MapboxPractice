@@ -1,5 +1,6 @@
 package com.matthewqiu.mapboxpractice;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import com.mapbox.services.android.navigation.v5.routeprogress.ProgressChangeLis
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends Activity {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
     private static final String JSON_EXTENSION = ".json";
