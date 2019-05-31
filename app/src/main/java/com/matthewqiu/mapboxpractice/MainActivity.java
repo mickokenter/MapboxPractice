@@ -19,7 +19,10 @@ import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.mapbox.android.core.location.LocationEngine;
@@ -100,7 +103,7 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
     private static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = 500;
 
     @BindView(R.id.cl_main_activity_layout)
-    ConstraintLayout navigationLayout;
+    RelativeLayout navigationLayout;
 
     @BindView(R.id.mapView)
     MapView mapView;
@@ -144,8 +147,10 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback,
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
     }
 
 
