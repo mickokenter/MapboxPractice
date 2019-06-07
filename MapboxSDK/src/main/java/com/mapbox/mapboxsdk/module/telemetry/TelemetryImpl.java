@@ -10,12 +10,12 @@ import com.mapbox.android.telemetry.AppUserTurnstile;
 import com.mapbox.android.telemetry.MapboxTelemetry;
 import com.mapbox.android.telemetry.SessionInterval;
 import com.mapbox.android.telemetry.TelemetryEnabler;
+import com.mapbox.mapboxsdk.BuildConfig;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.constants.MapboxConstants;
 import com.mapbox.mapboxsdk.maps.TelemetryDefinition;
 import com.mapbox.mapboxsdk.offline.OfflineRegionDefinition;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
-import com.mapbox.mapboxsdk.rest.Configs;
 
 import java.util.UUID;
 
@@ -27,7 +27,7 @@ public class TelemetryImpl implements TelemetryDefinition {
   public TelemetryImpl() {
     appContext = Mapbox.getApplicationContext();
     String accessToken = Mapbox.getAccessToken();
-    telemetry = new MapboxTelemetry(appContext, accessToken, Configs.MAPBOX_EVENTS_USER_AGENT);
+    telemetry = new MapboxTelemetry(appContext, accessToken, BuildConfig.MAPBOX_EVENTS_USER_AGENT);
     TelemetryEnabler.State telemetryState = TelemetryEnabler.retrieveTelemetryStateFromPreferences();
     if (TelemetryEnabler.State.ENABLED.equals(telemetryState)) {
       telemetry.enable();
@@ -39,8 +39,8 @@ public class TelemetryImpl implements TelemetryDefinition {
    */
   @Override
   public void onAppUserTurnstileEvent() {
-    AppUserTurnstile turnstileEvent = new AppUserTurnstile(Configs.MAPBOX_SDK_IDENTIFIER,
-            Configs.MAPBOX_SDK_VERSION);
+    AppUserTurnstile turnstileEvent = new AppUserTurnstile(BuildConfig.MAPBOX_SDK_IDENTIFIER,
+      BuildConfig.MAPBOX_SDK_VERSION);
     turnstileEvent.setSkuId(MapboxAccounts.SKU_ID_MAPS_MAUS);
     telemetry.push(turnstileEvent);
     telemetry.push(MapEventFactory.buildMapLoadEvent(new PhoneState(appContext)));

@@ -3,7 +3,7 @@ package com.mapbox.mapboxsdk.module.telemetry;
 import android.annotation.SuppressLint;
 import android.os.Build;
 
-import com.mapbox.mapboxsdk.rest.Configs;
+import com.mapbox.mapboxsdk.BuildConfig;
 
 /**
  * Event will be sent while map is loaded.
@@ -12,8 +12,8 @@ import com.mapbox.mapboxsdk.rest.Configs;
 class MapLoadEvent extends MapBaseEvent {
   private static final String EVENT_NAME = "map.load";
   private final String operatingSystem = "Android - " + Build.VERSION.RELEASE;
-  private final String sdkIdentifier = Configs.MAPBOX_SDK_IDENTIFIER;
-  private final String sdkVersion = Configs.MAPBOX_SDK_VERSION;
+  private final String sdkIdentifier = BuildConfig.MAPBOX_SDK_IDENTIFIER;
+  private final String sdkVersion = BuildConfig.MAPBOX_SDK_VERSION;
   private final String model = Build.MODEL;
   private final String userId;
   private final String carrier;

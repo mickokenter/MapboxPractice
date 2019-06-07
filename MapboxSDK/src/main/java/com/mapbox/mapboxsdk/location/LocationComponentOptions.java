@@ -204,7 +204,7 @@ public class LocationComponentOptions implements Parcelable {
     TypedArray typedArray = context.obtainStyledAttributes(
       styleRes, R.styleable.mapbox_LocationComponent);
 
-    LocationComponentOptions.Builder builder = new LocationComponentOptions.Builder()
+    Builder builder = new Builder()
       .enableStaleState(true)
       .staleStateTimeout(STALE_STATE_DELAY_MS)
       .maxZoomIconScale(MAX_ZOOM_ICON_SCALE_DEFAULT)
@@ -935,8 +935,8 @@ public class LocationComponentOptions implements Parcelable {
     return result;
   }
 
-  public static final Parcelable.Creator<LocationComponentOptions> CREATOR =
-    new Parcelable.Creator<LocationComponentOptions>() {
+  public static final Creator<LocationComponentOptions> CREATOR =
+    new Creator<LocationComponentOptions>() {
       @Override
       public LocationComponentOptions createFromParcel(Parcel in) {
         return new LocationComponentOptions(
@@ -1204,7 +1204,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_accuracyAlpha
      */
     @NonNull
-    public LocationComponentOptions.Builder accuracyAlpha(float accuracyAlpha) {
+    public Builder accuracyAlpha(float accuracyAlpha) {
       this.accuracyAlpha = accuracyAlpha;
       return this;
     }
@@ -1217,7 +1217,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_accuracyColor
      */
     @NonNull
-    public LocationComponentOptions.Builder accuracyColor(int accuracyColor) {
+    public Builder accuracyColor(int accuracyColor) {
       this.accuracyColor = accuracyColor;
       return this;
     }
@@ -1230,7 +1230,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_backgroundDrawableStale
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundDrawableStale(int backgroundDrawableStale) {
+    public Builder backgroundDrawableStale(int backgroundDrawableStale) {
       this.backgroundDrawableStale = backgroundDrawableStale;
       return this;
     }
@@ -1248,7 +1248,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundStaleName(@Nullable String backgroundStaleName) {
+    public Builder backgroundStaleName(@Nullable String backgroundStaleName) {
       this.backgroundStaleName = backgroundStaleName;
       return this;
     }
@@ -1261,7 +1261,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_foregroundDrawableStale
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundDrawableStale(int foregroundDrawableStale) {
+    public Builder foregroundDrawableStale(int foregroundDrawableStale) {
       this.foregroundDrawableStale = foregroundDrawableStale;
       return this;
     }
@@ -1279,7 +1279,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundStaleName(@Nullable String foregroundStaleName) {
+    public Builder foregroundStaleName(@Nullable String foregroundStaleName) {
       this.foregroundStaleName = foregroundStaleName;
       return this;
     }
@@ -1292,7 +1292,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_gpsDrawable
      */
     @NonNull
-    public LocationComponentOptions.Builder gpsDrawable(int gpsDrawable) {
+    public Builder gpsDrawable(int gpsDrawable) {
       this.gpsDrawable = gpsDrawable;
       return this;
     }
@@ -1310,7 +1310,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder gpsName(@Nullable String gpsName) {
+    public Builder gpsName(@Nullable String gpsName) {
       this.gpsName = gpsName;
       return this;
     }
@@ -1323,7 +1323,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_foregroundDrawable
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundDrawable(int foregroundDrawable) {
+    public Builder foregroundDrawable(int foregroundDrawable) {
       this.foregroundDrawable = foregroundDrawable;
       return this;
     }
@@ -1341,7 +1341,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundName(@Nullable String foregroundName) {
+    public Builder foregroundName(@Nullable String foregroundName) {
       this.foregroundName = foregroundName;
       return this;
     }
@@ -1354,7 +1354,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_backgroundDrawable
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundDrawable(int backgroundDrawable) {
+    public Builder backgroundDrawable(int backgroundDrawable) {
       this.backgroundDrawable = backgroundDrawable;
       return this;
     }
@@ -1372,7 +1372,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundName(@Nullable String backgroundName) {
+    public Builder backgroundName(@Nullable String backgroundName) {
       this.backgroundName = backgroundName;
       return this;
     }
@@ -1385,7 +1385,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_bearingDrawable
      */
     @NonNull
-    public LocationComponentOptions.Builder bearingDrawable(int bearingDrawable) {
+    public Builder bearingDrawable(int bearingDrawable) {
       this.bearingDrawable = bearingDrawable;
       return this;
     }
@@ -1403,7 +1403,7 @@ public class LocationComponentOptions implements Parcelable {
      * @return this builder for chaining options together
      */
     @NonNull
-    public LocationComponentOptions.Builder bearingName(@Nullable String bearingName) {
+    public Builder bearingName(@Nullable String bearingName) {
       this.bearingName = bearingName;
       return this;
     }
@@ -1416,7 +1416,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_bearingTintColor
      */
     @NonNull
-    public LocationComponentOptions.Builder bearingTintColor(@Nullable Integer bearingTintColor) {
+    public Builder bearingTintColor(@Nullable Integer bearingTintColor) {
       this.bearingTintColor = bearingTintColor;
       return this;
     }
@@ -1429,7 +1429,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_foregroundTintColor
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundTintColor(@Nullable Integer foregroundTintColor) {
+    public Builder foregroundTintColor(@Nullable Integer foregroundTintColor) {
       this.foregroundTintColor = foregroundTintColor;
       return this;
     }
@@ -1442,7 +1442,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_backgroundTintColor
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundTintColor(@Nullable Integer backgroundTintColor) {
+    public Builder backgroundTintColor(@Nullable Integer backgroundTintColor) {
       this.backgroundTintColor = backgroundTintColor;
       return this;
     }
@@ -1455,7 +1455,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_foregroundStaleTintColor
      */
     @NonNull
-    public LocationComponentOptions.Builder foregroundStaleTintColor(@Nullable Integer foregroundStaleTintColor) {
+    public Builder foregroundStaleTintColor(@Nullable Integer foregroundStaleTintColor) {
       this.foregroundStaleTintColor = foregroundStaleTintColor;
       return this;
     }
@@ -1468,7 +1468,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_backgroundStaleTintColor
      */
     @NonNull
-    public LocationComponentOptions.Builder backgroundStaleTintColor(@Nullable Integer backgroundStaleTintColor) {
+    public Builder backgroundStaleTintColor(@Nullable Integer backgroundStaleTintColor) {
       this.backgroundStaleTintColor = backgroundStaleTintColor;
       return this;
     }
@@ -1481,7 +1481,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_elevation
      */
     @NonNull
-    public LocationComponentOptions.Builder elevation(float elevation) {
+    public Builder elevation(float elevation) {
       this.elevation = elevation;
       return this;
     }
@@ -1495,7 +1495,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_enableStaleState
      */
     @NonNull
-    public LocationComponentOptions.Builder enableStaleState(boolean enabled) {
+    public Builder enableStaleState(boolean enabled) {
       this.enableStaleState = enabled;
       return this;
     }
@@ -1511,7 +1511,7 @@ public class LocationComponentOptions implements Parcelable {
      * @attr ref R.styleable#LocationComponent_staleStateTimeout
      */
     @NonNull
-    public LocationComponentOptions.Builder staleStateTimeout(long timeout) {
+    public Builder staleStateTimeout(long timeout) {
       this.staleStateTimeout = timeout;
       return this;
     }
@@ -1531,7 +1531,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param padding The margins for the map in pixels (left, top, right, bottom).
      */
     @NonNull
-    public LocationComponentOptions.Builder padding(@Nullable int[] padding) {
+    public Builder padding(@Nullable int[] padding) {
       if (padding == null) {
         throw new NullPointerException("Null padding");
       }
@@ -1550,7 +1550,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param maxZoomIconScale icon scale factor
      */
     @NonNull
-    public LocationComponentOptions.Builder maxZoomIconScale(float maxZoomIconScale) {
+    public Builder maxZoomIconScale(float maxZoomIconScale) {
       this.maxZoomIconScale = maxZoomIconScale;
       return this;
     }
@@ -1566,7 +1566,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param minZoomIconScale icon scale factor
      */
     @NonNull
-    public LocationComponentOptions.Builder minZoomIconScale(float minZoomIconScale) {
+    public Builder minZoomIconScale(float minZoomIconScale) {
       this.minZoomIconScale = minZoomIconScale;
       return this;
     }
@@ -1586,7 +1586,7 @@ public class LocationComponentOptions implements Parcelable {
      * @see Builder#trackingMultiFingerMoveThreshold(float)
      */
     @NonNull
-    public LocationComponentOptions.Builder trackingGesturesManagement(boolean trackingGesturesManagement) {
+    public Builder trackingGesturesManagement(boolean trackingGesturesManagement) {
       this.trackingGesturesManagement = trackingGesturesManagement;
       return this;
     }
@@ -1597,7 +1597,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param moveThreshold the minimum movement
      */
     @NonNull
-    public LocationComponentOptions.Builder trackingInitialMoveThreshold(float moveThreshold) {
+    public Builder trackingInitialMoveThreshold(float moveThreshold) {
       this.trackingInitialMoveThreshold = moveThreshold;
       return this;
     }
@@ -1609,7 +1609,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param moveThreshold the minimum movement
      */
     @NonNull
-    public LocationComponentOptions.Builder trackingMultiFingerMoveThreshold(float moveThreshold) {
+    public Builder trackingMultiFingerMoveThreshold(float moveThreshold) {
       this.trackingMultiFingerMoveThreshold = moveThreshold;
       return this;
     }
@@ -1623,7 +1623,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param layerAbove the id of the layer the component is going to placed directly above.
      */
     @NonNull
-    public LocationComponentOptions.Builder layerAbove(String layerAbove) {
+    public Builder layerAbove(String layerAbove) {
       this.layerAbove = layerAbove;
       return this;
     }
@@ -1637,7 +1637,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param layerBelow the id of the layer the component is going to placed directly below.
      */
     @NonNull
-    public LocationComponentOptions.Builder layerBelow(String layerBelow) {
+    public Builder layerBelow(String layerBelow) {
       this.layerBelow = layerBelow;
       return this;
     }
@@ -1648,7 +1648,7 @@ public class LocationComponentOptions implements Parcelable {
      * @param trackingAnimationDurationMultiplier the tracking animation duration multiplier
      */
     @NonNull
-    public LocationComponentOptions.Builder trackingAnimationDurationMultiplier(
+    public Builder trackingAnimationDurationMultiplier(
       float trackingAnimationDurationMultiplier) {
       this.trackingAnimationDurationMultiplier = trackingAnimationDurationMultiplier;
       return this;
@@ -1660,7 +1660,7 @@ public class LocationComponentOptions implements Parcelable {
      *
      * @return whether smooth compass animation is enabled
      */
-    public LocationComponentOptions.Builder compassAnimationEnabled(Boolean compassAnimationEnabled) {
+    public Builder compassAnimationEnabled(Boolean compassAnimationEnabled) {
       this.compassAnimationEnabled = compassAnimationEnabled;
       return this;
     }

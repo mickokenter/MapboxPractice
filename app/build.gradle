@@ -32,13 +32,17 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
 
-//    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
-    implementation project(':mapboxsdk')
+    api project(':mapboxsdk')
+    api project(':mapboxnavigation')
+    api project(':mapboxnavigationui')
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.8.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.39.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.39.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-core:1.3.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.39.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.39.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-core:1.3.0'
     implementation 'com.jakewharton:butterknife:8.8.1'
 
     implementation 'com.android.support:support-v4:28.0.0'

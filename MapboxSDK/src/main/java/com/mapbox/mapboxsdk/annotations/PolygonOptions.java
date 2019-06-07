@@ -20,8 +20,8 @@ import java.util.List;
 @Deprecated
 public final class PolygonOptions implements Parcelable {
 
-  public static final Parcelable.Creator<PolygonOptions> CREATOR =
-    new Parcelable.Creator<PolygonOptions>() {
+  public static final Creator<PolygonOptions> CREATOR =
+    new Creator<PolygonOptions>() {
       public PolygonOptions createFromParcel(@NonNull Parcel in) {
         return new PolygonOptions(in);
       }

@@ -89,7 +89,7 @@ public abstract class MapRenderer implements MapRendererScheduler {
     long startTime = System.nanoTime();
     try {
       nativeRender();
-    } catch (java.lang.Error error) {
+    } catch (Error error) {
       Logger.e(TAG, error.getMessage());
     }
     long renderTime = System.nanoTime() - startTime;

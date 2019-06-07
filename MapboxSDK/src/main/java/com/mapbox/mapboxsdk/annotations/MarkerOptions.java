@@ -133,8 +133,8 @@ public final class MarkerOptions extends BaseMarkerOptions<Marker, MarkerOptions
     return icon;
   }
 
-  public static final Parcelable.Creator<MarkerOptions> CREATOR =
-    new Parcelable.Creator<MarkerOptions>() {
+  public static final Creator<MarkerOptions> CREATOR =
+    new Creator<MarkerOptions>() {
       public MarkerOptions createFromParcel(@NonNull Parcel in) {
         return new MarkerOptions(in);
       }

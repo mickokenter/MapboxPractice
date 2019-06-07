@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.mapbox.services.android.navigation.v5.navigation.MapboxNavigation;
-import com.mapbox.services.android.navigation.v5.routeprogress.ProgressChangeListener;
+import com.matthewqiu.mapboxnavilib.navigation.MapboxNavigation;
+import com.matthewqiu.mapboxnavilib.routeprogress.ProgressChangeListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

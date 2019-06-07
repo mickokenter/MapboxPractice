@@ -86,8 +86,8 @@ public class LatLngSpan implements Parcelable {
   /**
    * Inner class responsible for recreating Parcels into objects.
    */
-  public static final Parcelable.Creator<LatLngSpan> CREATOR =
-    new Parcelable.Creator<LatLngSpan>() {
+  public static final Creator<LatLngSpan> CREATOR =
+    new Creator<LatLngSpan>() {
       @Override
       public LatLngSpan createFromParcel(@NonNull Parcel in) {
         return new LatLngSpan(in);

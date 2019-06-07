@@ -101,8 +101,8 @@ class MarkerContainer implements Markers {
     int count = annotationList.size();
     for (int i = 0; i < count; i++) {
       Annotation annotation = annotationList.get(i);
-      if (annotation instanceof com.mapbox.mapboxsdk.annotations.Marker && idsList.contains(annotation.getId())) {
-        annotations.add((com.mapbox.mapboxsdk.annotations.Marker) annotation);
+      if (annotation instanceof Marker && idsList.contains(annotation.getId())) {
+        annotations.add((Marker) annotation);
       }
     }
 

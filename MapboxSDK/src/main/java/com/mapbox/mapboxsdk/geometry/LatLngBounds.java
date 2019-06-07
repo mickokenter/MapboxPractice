@@ -337,7 +337,7 @@ public class LatLngBounds implements Parcelable {
    */
   @NonNull
   public LatLngBounds include(@NonNull LatLng latLng) {
-    return new LatLngBounds.Builder()
+    return new Builder()
             .include(getNorthEast())
             .include(getSouthWest())
             .include(latLng)
@@ -501,8 +501,8 @@ public class LatLngBounds implements Parcelable {
   /**
    * Inner class responsible for recreating Parcels into objects.
    */
-  public static final Parcelable.Creator<LatLngBounds> CREATOR =
-    new Parcelable.Creator<LatLngBounds>() {
+  public static final Creator<LatLngBounds> CREATOR =
+    new Creator<LatLngBounds>() {
       @Override
       public LatLngBounds createFromParcel(@NonNull final Parcel in) {
         return readFromParcel(in);

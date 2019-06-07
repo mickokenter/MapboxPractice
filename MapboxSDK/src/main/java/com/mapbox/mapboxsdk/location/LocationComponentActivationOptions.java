@@ -44,7 +44,7 @@ public class LocationComponentActivationOptions {
    */
   @NonNull
   public static Builder builder(@NonNull Context context, @NonNull Style fullyLoadedMapStyle) {
-    return new LocationComponentActivationOptions.Builder(context, fullyLoadedMapStyle);
+    return new Builder(context, fullyLoadedMapStyle);
   }
 
   /**

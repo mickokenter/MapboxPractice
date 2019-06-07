@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.Geometry;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.turf.TurfMeasurement;
+import com.mapbox.turf.TurfMeasurement;
 
 /**
  * An offline region defined by a style URL, geometry, zoom range, and

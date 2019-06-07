@@ -59,7 +59,7 @@ public class ImageSource extends Source {
    * @param coordinates The Latitude and Longitude of the four corners of the image
    * @param bitmap      A Bitmap image
    */
-  public ImageSource(String id, LatLngQuad coordinates, @NonNull android.graphics.Bitmap bitmap) {
+  public ImageSource(String id, LatLngQuad coordinates, @NonNull Bitmap bitmap) {
     super();
     initialize(id, coordinates);
     setImage(bitmap);
@@ -102,7 +102,7 @@ public class ImageSource extends Source {
    *
    * @param bitmap A Bitmap image
    */
-  public void setImage(@NonNull android.graphics.Bitmap bitmap) {
+  public void setImage(@NonNull Bitmap bitmap) {
     checkThread();
     nativeSetImage(bitmap);
   }

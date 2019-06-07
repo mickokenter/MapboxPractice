@@ -20,8 +20,8 @@ import java.util.List;
 public final class PolylineOptions implements Parcelable {
 
 
-  public static final Parcelable.Creator<PolylineOptions> CREATOR =
-    new Parcelable.Creator<PolylineOptions>() {
+  public static final Creator<PolylineOptions> CREATOR =
+    new Creator<PolylineOptions>() {
       public PolylineOptions createFromParcel(@NonNull Parcel in) {
         return new PolylineOptions(in);
       }

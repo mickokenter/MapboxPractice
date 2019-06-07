@@ -50,7 +50,7 @@ public class LatLngQuad implements Parcelable {
     return this.bottomLeft;
   }
 
-  public static final Parcelable.Creator<LatLngQuad> CREATOR = new Parcelable.Creator<LatLngQuad>() {
+  public static final Creator<LatLngQuad> CREATOR = new Creator<LatLngQuad>() {
     @Override
     public LatLngQuad createFromParcel(@NonNull final Parcel in) {
       return readFromParcel(in);

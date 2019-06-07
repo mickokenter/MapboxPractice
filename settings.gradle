@@ -1,1 +1,1 @@
-include ':app', ':mapboxsdk'
+include ':app', ':mapboxsdk', ':mapboxnavigation', ':mapboxnavigationui'

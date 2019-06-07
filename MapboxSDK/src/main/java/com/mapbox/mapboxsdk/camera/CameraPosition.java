@@ -20,8 +20,8 @@ public final class CameraPosition implements Parcelable {
 
   public static final CameraPosition DEFAULT = new CameraPosition(new LatLng(), 0, 0, 0);
 
-  public static final Parcelable.Creator<CameraPosition> CREATOR =
-    new Parcelable.Creator<CameraPosition>() {
+  public static final Creator<CameraPosition> CREATOR =
+    new Creator<CameraPosition>() {
       public CameraPosition createFromParcel(Parcel in) {
         double bearing = in.readDouble();
         LatLng target = in.readParcelable(LatLng.class.getClassLoader());

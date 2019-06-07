@@ -71,7 +71,7 @@ public final class MapboxMap {
   private AnnotationManager annotationManager;
 
   @Nullable
-  private MapboxMap.OnFpsChangedListener onFpsChangedListener;
+  private OnFpsChangedListener onFpsChangedListener;
 
   @Nullable
   private Style style;
@@ -413,7 +413,7 @@ public final class MapboxMap {
    * @param callback the callback to be invoked when an animation finishes or is canceled
    */
   public final void moveCamera(@NonNull final CameraUpdate update,
-                               @Nullable final MapboxMap.CancelableCallback callback) {
+                               @Nullable final CancelableCallback callback) {
     transform.moveCamera(MapboxMap.this, update, callback);
   }
 
@@ -423,7 +423,7 @@ public final class MapboxMap {
    * it will return the current location of the camera in flight.
    *
    * @param update The change that should be applied to the camera.
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void easeCamera(@NonNull CameraUpdate update) {
     easeCamera(update, MapboxConstants.ANIMATION_DURATION);
@@ -440,9 +440,9 @@ public final class MapboxMap {
    *                 will be notified with onFinish(). If the animation stops due to interruption
    *                 by a later camera movement or a user gesture, onCancel() will be called.
    *                 Do not update or ease the camera from within onCancel().
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
-  public final void easeCamera(@NonNull CameraUpdate update, @Nullable final MapboxMap.CancelableCallback callback) {
+  public final void easeCamera(@NonNull CameraUpdate update, @Nullable final CancelableCallback callback) {
     easeCamera(update, MapboxConstants.ANIMATION_DURATION, callback);
   }
 
@@ -454,7 +454,7 @@ public final class MapboxMap {
    * @param update     The change that should be applied to the camera.
    * @param durationMs The duration of the animation in milliseconds. This must be strictly
    *                   positive, otherwise an IllegalArgumentException will be thrown.
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void easeCamera(@NonNull CameraUpdate update, int durationMs) {
     easeCamera(update, durationMs, null);
@@ -477,10 +477,10 @@ public final class MapboxMap {
    *                   will be notified with onFinish(). If the animation stops due to interruption
    *                   by a later camera movement or a user gesture, onCancel() will be called.
    *                   Do not update or ease the camera from within onCancel().
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void easeCamera(@NonNull CameraUpdate update, int durationMs,
-                               @Nullable final MapboxMap.CancelableCallback callback) {
+                               @Nullable final CancelableCallback callback) {
     easeCamera(update, durationMs, true, callback);
   }
 
@@ -521,7 +521,7 @@ public final class MapboxMap {
   public final void easeCamera(@NonNull final CameraUpdate update,
                                final int durationMs,
                                final boolean easingInterpolator,
-                               @Nullable final MapboxMap.CancelableCallback callback) {
+                               @Nullable final CancelableCallback callback) {
 
     if (durationMs <= 0) {
       throw new IllegalArgumentException("Null duration passed into easeCamera");
@@ -536,7 +536,7 @@ public final class MapboxMap {
    * of the camera in flight.
    *
    * @param update The change that should be applied to the camera.
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void animateCamera(@NonNull CameraUpdate update) {
     animateCamera(update, MapboxConstants.ANIMATION_DURATION, null);
@@ -552,9 +552,9 @@ public final class MapboxMap {
    * @param callback The callback to invoke from the main thread when the animation stops. If the
    *                 animation completes normally, onFinish() is called; otherwise, onCancel() is
    *                 called. Do not update or animate the camera from within onCancel().
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
-  public final void animateCamera(@NonNull CameraUpdate update, @Nullable MapboxMap.CancelableCallback callback) {
+  public final void animateCamera(@NonNull CameraUpdate update, @Nullable CancelableCallback callback) {
     animateCamera(update, MapboxConstants.ANIMATION_DURATION, callback);
   }
 
@@ -567,7 +567,7 @@ public final class MapboxMap {
    * @param update     The change that should be applied to the camera.
    * @param durationMs The duration of the animation in milliseconds. This must be strictly
    *                   positive, otherwise an IllegalArgumentException will be thrown.
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void animateCamera(@NonNull CameraUpdate update, int durationMs) {
     animateCamera(update, durationMs, null);
@@ -589,10 +589,10 @@ public final class MapboxMap {
    *                   by a later camera movement or a user gesture, onCancel() will be called.
    *                   Do not update or animate the camera from within onCancel(). If a callback
    *                   isn't required, leave it as null.
-   * @see com.mapbox.mapboxsdk.camera.CameraUpdateFactory for a set of updates.
+   * @see CameraUpdateFactory for a set of updates.
    */
   public final void animateCamera(@NonNull final CameraUpdate update, final int durationMs,
-                                  @Nullable final MapboxMap.CancelableCallback callback) {
+                                  @Nullable final CancelableCallback callback) {
     if (durationMs <= 0) {
       throw new IllegalArgumentException("Null duration passed into animateCamera");
     }

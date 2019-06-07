@@ -905,7 +905,7 @@ public class MapboxMapOptions implements Parcelable {
     return pixelRatio;
   }
 
-  public static final Parcelable.Creator<MapboxMapOptions> CREATOR = new Parcelable.Creator<MapboxMapOptions>() {
+  public static final Creator<MapboxMapOptions> CREATOR = new Creator<MapboxMapOptions>() {
     public MapboxMapOptions createFromParcel(@NonNull Parcel in) {
       return new MapboxMapOptions(in);
     }

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.util.Log;
-import com.mapbox.mapboxsdk.rest.Configs;
+import com.mapbox.mapboxsdk.BuildConfig;
 import com.mapbox.mapboxsdk.constants.MapboxConstants;
 import com.mapbox.mapboxsdk.http.HttpIdentifier;
 import com.mapbox.mapboxsdk.http.HttpLogger;
@@ -37,8 +37,8 @@ public class HttpRequestImpl implements HttpRequest {
   private static final String userAgentString = toHumanReadableAscii(
     String.format("%s %s (%s) Android/%s (%s)",
       HttpIdentifier.getIdentifier(),
-      Configs.MAPBOX_VERSION_STRING,
-      Configs.GIT_REVISION_SHORT,
+      BuildConfig.MAPBOX_VERSION_STRING,
+      BuildConfig.GIT_REVISION_SHORT,
       Build.VERSION.SDK_INT,
       Build.CPU_ABI)
   );

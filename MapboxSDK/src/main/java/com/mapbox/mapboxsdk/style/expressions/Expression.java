@@ -4209,7 +4209,7 @@ public class Expression {
       if (literal instanceof PropertyValue) {
         throw new IllegalArgumentException(
           "PropertyValue are not allowed as an expression literal, use value instead.");
-      } else if (literal instanceof Expression.ExpressionLiteral) {
+      } else if (literal instanceof ExpressionLiteral) {
         return ((ExpressionLiteral) literal).toValue();
       }
       return literal;
@@ -4520,7 +4520,7 @@ public class Expression {
       } else if (jsonElement instanceof JsonPrimitive) {
         return convert((JsonPrimitive) jsonElement);
       } else if (jsonElement instanceof JsonNull) {
-        return new Expression.ExpressionLiteral("");
+        return new ExpressionLiteral("");
       } else if (jsonElement instanceof JsonObject) {
         Map<String, Expression> map = new HashMap<>();
         for (String key : ((JsonObject) jsonElement).keySet()) {

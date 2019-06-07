@@ -147,8 +147,8 @@ public class VisibleRegion implements Parcelable {
   /**
    * Inner class responsible for recreating Parcels into objects.
    */
-  public static final Parcelable.Creator<VisibleRegion> CREATOR =
-    new Parcelable.Creator<VisibleRegion>() {
+  public static final Creator<VisibleRegion> CREATOR =
+    new Creator<VisibleRegion>() {
       public VisibleRegion createFromParcel(@NonNull Parcel in) {
         return new VisibleRegion(in);
       }

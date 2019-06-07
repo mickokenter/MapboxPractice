@@ -10,9 +10,9 @@ import android.support.annotation.Nullable;
 
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.constants.GeometryConstants;
-import com.mapbox.mapboxsdk.turf.TurfMeasurement;
+import com.mapbox.turf.TurfMeasurement;
 
-import static com.mapbox.mapboxsdk.turf.TurfConstants.UNIT_METRES;
+import static com.mapbox.turf.TurfConstants.UNIT_METRES;
 
 
 /**
@@ -32,7 +32,7 @@ public class LatLng implements Parcelable {
   /**
    * Inner class responsible for recreating Parcels into objects.
    */
-  public static final Parcelable.Creator<LatLng> CREATOR = new Parcelable.Creator<LatLng>() {
+  public static final Creator<LatLng> CREATOR = new Creator<LatLng>() {
     public LatLng createFromParcel(@NonNull Parcel in) {
       return new LatLng(in);
     }

@@ -436,22 +436,22 @@ public final class CameraUpdateFactory {
 
     double transformZoom(double currentZoom) {
       switch (getType()) {
-        case CameraUpdateFactory.ZoomUpdate.ZOOM_IN:
+        case ZoomUpdate.ZOOM_IN:
           currentZoom++;
           break;
-        case CameraUpdateFactory.ZoomUpdate.ZOOM_OUT:
+        case ZoomUpdate.ZOOM_OUT:
           currentZoom--;
           if (currentZoom < 0) {
             currentZoom = 0;
           }
           break;
-        case CameraUpdateFactory.ZoomUpdate.ZOOM_TO:
+        case ZoomUpdate.ZOOM_TO:
           currentZoom = getZoom();
           break;
-        case CameraUpdateFactory.ZoomUpdate.ZOOM_BY:
+        case ZoomUpdate.ZOOM_BY:
           currentZoom = currentZoom + getZoom();
           break;
-        case CameraUpdateFactory.ZoomUpdate.ZOOM_TO_POINT:
+        case ZoomUpdate.ZOOM_TO_POINT:
           currentZoom = currentZoom + getZoom();
           break;
       }
@@ -461,7 +461,7 @@ public final class CameraUpdateFactory {
     @Override
     public CameraPosition getCameraPosition(@NonNull MapboxMap mapboxMap) {
       CameraPosition cameraPosition = mapboxMap.getCameraPosition();
-      if (getType() != CameraUpdateFactory.ZoomUpdate.ZOOM_TO_POINT) {
+      if (getType() != ZoomUpdate.ZOOM_TO_POINT) {
         return new CameraPosition.Builder(cameraPosition)
           .zoom(transformZoom(cameraPosition.zoom))
           .build();

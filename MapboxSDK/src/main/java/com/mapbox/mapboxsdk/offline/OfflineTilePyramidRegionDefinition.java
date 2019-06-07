@@ -148,7 +148,7 @@ public class OfflineTilePyramidRegionDefinition implements OfflineRegionDefiniti
     dest.writeFloat(pixelRatio);
   }
 
-  public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+  public static final Creator CREATOR = new Creator() {
     public OfflineTilePyramidRegionDefinition createFromParcel(@NonNull Parcel in) {
       return new OfflineTilePyramidRegionDefinition(in);
     }
